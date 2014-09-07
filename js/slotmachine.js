@@ -13,7 +13,7 @@ var slots = [];
 var score = 10;
 
 function startGame(){
-	document.getElementById('score').innerHTML=score+" - Rolling!";
+	document.getElementById('score').innerHTML='Rolling!';
 	var seconds = 1000; //miliseconds
 	shuffle();
 	document.getElementById('arm').src='img/arm-2.png';
