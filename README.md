@@ -1,0 +1,4 @@
+slotmachine
+===========
+
+Tutorial on javascript
