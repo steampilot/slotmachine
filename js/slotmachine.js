@@ -11,17 +11,22 @@ var images = [
 ];
 var slots = [];
 var score = 10;
-
+var status = 0;
 function startGame(){
-	document.getElementById('score').innerHTML='Rolling!';
 	var seconds = 1000; //miliseconds
-	shuffle();
-	document.getElementById('arm').src='img/arm-2.png';
-	setTimeout(function(){document.getElementById('arm').src='img/arm-1.png';},4*seconds);
-	setTimeout(function(){rollDice(1)},4*seconds);
-	setTimeout(function(){rollDice(2)},5*seconds);
-	setTimeout(function(){rollDice(3)},6*seconds);
-	setTimeout(function(){checkWinCondition()},6.5*seconds);
+	if (status == 0) {
+		status = 1;
+		document.getElementById('score').innerHTML='Rolling!';
+		shuffle();
+		document.getElementById('arm').src='img/arm-2.png';
+		setTimeout(function(){document.getElementById('arm').src='img/arm-1.png';},4*seconds);
+		setTimeout(function(){rollDice(1);},4*seconds);
+		setTimeout(function(){rollDice(2);},5*seconds);
+		setTimeout(function(){rollDice(3);},6*seconds);
+		setTimeout(function(){checkWinCondition();},6.5*seconds);
+		setTimeout(function(){status=0;},7*seconds);
+	}
+
 }
 function shuffle(){
 	document.getElementById('window1').src='img/slot_rot1.gif';
